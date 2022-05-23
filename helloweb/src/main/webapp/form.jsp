@@ -29,7 +29,7 @@
 		<br/><br/>
 
 		취미:
-		코딩 <input type="checkbox" name="hobby" value="coding"/>
+		영화감상 <input type="checkbox" name="hobby" value="coding"/>
 		술먹기 <input type="checkbox" name="hobby" value="drinking"/>
 		요리 <input type="checkbox" name="hobby" value="cooking"/>
 		수영 <input type="checkbox" name="hobby" value="swimming" />
