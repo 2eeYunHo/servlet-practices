@@ -37,7 +37,7 @@
 		<tr>
 			<td><%=index-- %></td>
 			<td><%=vo.getName() %></td>
-			<td><%=vo.getReg_date() %></td>
+			<td><%=vo.getRegDate() %></td>
 			<td><a href="/guestbook02/gb?a=deleteform&no=<%=vo.getNo()%>">삭제</a></td>
 		</tr>
 		<tr>

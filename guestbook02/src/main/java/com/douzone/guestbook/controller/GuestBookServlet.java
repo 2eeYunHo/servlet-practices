@@ -15,52 +15,61 @@ import com.douzone.guestbook.vo.GuestBookVo;
 public class GuestBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		
-		String action = request.getParameter("a");
-		if("deleteform".equals(action)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/deleteform.jsp");
-			rd.forward(request, response);
-		} else if("add".equals(action)) {
-			
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+
+		String action = request.getParameter("a"); // 임의로 지정한거 a
+		if ("list".equals(action)) {
+
+		} else if ("add".equals(action)) {
 			String name = request.getParameter("name");
 			String password = request.getParameter("password");
 			String message = request.getParameter("message");
+
 			GuestBookVo vo = new GuestBookVo();
 			vo.setName(name);
 			vo.setPassword(password);
 			vo.setMessage(message);
+
 			new GuestBookDao().insert(vo);
-//			response.sendRedirect("/guestbook02/gb");
-			response.sendRedirect(request.getContextPath() +"/gb");
-			
-		} else if("delete".equals(action)){
+
+			response.sendRedirect(request.getContextPath() + "/gb");
+
+		} else if ("deleteform".equals(action)) {
+			String no = request.getParameter("no");
+			request.setAttribute("no", no);
+			// action에서 객체를 request에 담아 보낼경우.request.setAttribute("객체명", 객체);
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/deleteform.jsp"); // 포워딩
+			rd.forward(request, response);
+
+		} else if ("delete".equals(action)) {
+
 			Long no = Long.parseLong(request.getParameter("no"));
 			String password = request.getParameter("password");
+
 			GuestBookVo vo = new GuestBookVo();
 			vo.setNo(no);
 			vo.setPassword(password);
-			if(new GuestBookDao().delete(vo)){
-				response.sendRedirect(request.getContextPath()+"/gb?a=index");
-			}
-			else{
-				response.sendRedirect(request.getContextPath()+"/gb?a=deleteform&no="+no);
-			}
-			
-		}else {
+
+			new GuestBookDao().delete(vo);
+
+			response.sendRedirect(request.getContextPath() + "/gb");
+
+		} else {
 			List<GuestBookVo> list = new GuestBookDao().findAll();
-			request.setAttribute("list", list); // 데이터 저장
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp"); // 어디로 갈지 적어줘야함. -> 포워딩 redirect와는 다른것임.
+
+			request.setAttribute("list", list); // 저장
+
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp"); // 포워딩
 			rd.forward(request, response);
+
 		}
-		
+
 	}
 
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
