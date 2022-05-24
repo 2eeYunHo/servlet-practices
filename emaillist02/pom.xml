@@ -56,7 +56,7 @@
 			    	<username>admin</username>
 			    	<password>manager</password>
 			    </configuration>
-			</plugin>
+			</plugin>			
 		</plugins>
 	</build>	
 </project>
