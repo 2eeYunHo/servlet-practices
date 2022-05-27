@@ -43,8 +43,7 @@ public class _02Servlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException { // TODO Auto-generated method stub
-
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
