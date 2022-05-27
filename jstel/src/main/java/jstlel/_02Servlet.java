@@ -20,7 +20,7 @@ public class _02Servlet extends HttpServlet {
 		 * 
 		 * 3. El이 이름으로 객체를 찾는순서 2번의 역순
 		 * Page Scope > Request Scope > Session Scope > Application(Servlet Context) Scope
-		 * 
+		 * (pageScope) > requestScope > sessionScope > applicationScope //사용시
 		 * 주의!!!
 		 * 같은 이름으로 여러 범위에 객체를 저장할 경우 주의가 필요하다.
 		 */ 
