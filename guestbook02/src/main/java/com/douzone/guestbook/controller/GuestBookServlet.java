@@ -17,7 +17,7 @@ public class GuestBookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8"); //기본 문자 초기화
 
 		String action = request.getParameter("a"); // 임의로 지정한거 a
 		if ("list".equals(action)) {
@@ -27,7 +27,7 @@ public class GuestBookServlet extends HttpServlet {
 			String password = request.getParameter("password");
 			String message = request.getParameter("message");
 
-			GuestBookVo vo = new GuestBookVo();
+			GuestBookVo vo = new GuestBookVo(); 
 			vo.setName(name);
 			vo.setPassword(password);
 			vo.setMessage(message);
@@ -35,7 +35,7 @@ public class GuestBookServlet extends HttpServlet {
 			new GuestBookDao().insert(vo);
 
 			response.sendRedirect(request.getContextPath() + "/gb");
-
+			//getContextPath=프로젝트파일경로 guestbook02를 가져옴+/gb
 		} else if ("deleteform".equals(action)) {
 			String no = request.getParameter("no");
 			request.setAttribute("no", no);

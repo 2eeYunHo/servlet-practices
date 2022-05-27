@@ -15,7 +15,7 @@
 	</welcome-file-list>
 	<servlet>
 		<description></description>
-		<display-name>GuestBookServlet</display-name>
+		<display-name>GuestBookServlet</display-name> <!-- -->
 		<servlet-name>GuestBookServlet</servlet-name>
 		<servlet-class>com.douzone.guestbook.controller.GuestBookServlet
 		</servlet-class>
