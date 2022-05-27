@@ -25,16 +25,14 @@
 			<%
 				for(int j = 0; j<nCol;j++) {
 			%>
-			
+
 				<td>cell(<%=i %>, <%=j %>)</td>
 			<% } %>
 				
 			<!--   <td>cell(<%=i %>, 1)</td>			
-			<td>cell(<%=i %>, 2)</td>-->
-			
+				   <td>cell(<%=i %>, 2)</td> -->
 		</tr>
 		<% } %>
-		
 	</table>
 </body>
 </html>
