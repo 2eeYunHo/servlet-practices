@@ -23,7 +23,7 @@
 	<c:if test='${empty row }'>
 			<c:set var='row' value = '3' />	
 	</c:if>
-	<c:if test='${empty row }'>
+	<c:if test='${empty col }'>
 			<c:set var='col' value = '3' />	
 	</c:if>
 	<table border='1' cellspacing='0' cellpadding='10'>
