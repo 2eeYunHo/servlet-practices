@@ -46,6 +46,7 @@
 	
 	<h4>요청 파라미터</h4>
 	${param.a+10 }<br/>
+	<!-- param = 파라미터 사용 선언 -->
 	${param.email }<br/>	
 </body>
 </html>
