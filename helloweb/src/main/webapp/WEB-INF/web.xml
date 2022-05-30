@@ -27,4 +27,35 @@
     <servlet-name>CookieServlet</servlet-name>
     <url-pattern>/cookie</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LifeCycleServlet</display-name>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>helloweb.LifeCycleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/lc</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>WEB-INF/views/error/500.jsp</location>
+  </error-page>  
+    <error-page>
+  	<error-code>404</error-code>
+  	<location>WEB-INF/views/error/404.jsp</location>
+  </error-page>  
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>LifeCycleServlet2</display-name>
+    <servlet-name>LifeCycleServlet2</servlet-name>
+    <servlet-class>helloweb.LifeCycleServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet2</servlet-name>
+    <url-pattern>/lc</url-pattern>
+  </servlet-mapping>
 </web-app>
